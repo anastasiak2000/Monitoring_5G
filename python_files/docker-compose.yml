@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  ping-mode-1:
+    image: ping
+    environment:
+      - ping_mode=1
+    
+  ping-mode-2:
+    image: ping
+    environment:
+      - ping_mode=2
+    
+  ping-mode-3:
+    image: ping
+    environment:
+      - ping_mode=3
+   
