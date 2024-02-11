@@ -1,0 +1,18 @@
+# Use a base image that includes Python and other necessary dependencies
+FROM python:3.9
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the server script into the container
+COPY server_iperf.py /app/server_iperf.py
+
+# Install iperf3
+RUN apt-get update && apt-get install -y iperf3
+
+# Expose the port used by iperf3 server (default is 5201)
+EXPOSE 5201/udp
+EXPOSE 5201/tcp
+
+# Run the iperf3 server script
+CMD ["python", "server_iperf.py"]
