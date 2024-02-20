@@ -32,7 +32,7 @@ def update_prometheus_speedtest_metrics(st):
 
     Download_Speed.set(download_speed)
     Upload_Speed.set(upload_speed)
-    time.sleep(15)
+    time.sleep(5)
 
 
 def main():
